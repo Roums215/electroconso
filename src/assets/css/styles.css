@@ -1,0 +1,249 @@
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 300px;
+    border-radius: 15px;
+    margin: 20px;
+}
+.navbar ul {
+    display: flex;
+    margin-top: -25px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar li {
+    margin: 0 10px;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 25px;
+    background-color: #444;
+    transition: background-color 0.3s;
+}
+.navbar .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar .logo img {
+    height: 140px;
+}
+
+/* ACCUEIL */
+.accueil-body {
+    background: linear-gradient(#FFFFFF, #283C81);
+}
+.accueil-background {
+    /* width: 1666px; */
+    height: 520px;
+    background-image: url('../img/eyeSuivi.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.accueil-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.accueil-totalPrix {
+    color: #fff;
+    margin-top: 15%;
+    margin-left: 7%;
+    font-size: 370%;
+}
+.accueil-TTC {
+    color: #fff;
+    margin-top: 17%;
+    font-size: 170%;
+}
+.accueil-totalKwh {
+    color: #fff;
+    margin-top: -2%;
+    margin-left: 7%;
+    font-size: 270%;
+}
+.accueil-KHW {
+    color: #fff;
+    margin-top: 0%;
+    font-size: 115%;
+}
+.accueil-info {
+    color: #fff;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    margin-left: 7%;
+    font-size: 270%;
+}
+
+/* FOURNISSEUR */
+.fournisseur-body {
+    background: linear-gradient(#FFFFFF, #283C81);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fournisseur-card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.fournisseur-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+.fournisseur-card h3 {
+    margin: 10px 0;
+}
+.fournisseur-card p {
+    margin: 10px 0;
+}
+.fournisseur-card button {
+    background: #283C81;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.fournisseur-card button.selected {
+    background: #f0ad4e;
+}
+.fournisseur-card button:hover {
+    background: #1f2d66;
+}
+
+/* PAGE PRISE */
+.prise-body {
+    background: linear-gradient(#FFFFFF, #283C81);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 400px;
+    margin-top: 50px;
+    text-align: center;
+}
+.form-container h2 {
+    margin-bottom: 20px;
+}
+.form-container input, .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-container button {
+    background: #283C81;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 100%;
+}
+.form-container button:hover {
+    background: #1f2d66;
+}
+.prises-container {
+    margin-top: 50px;
+    width: 80%;
+}
+.prise {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.prise-info {
+    text-align: left;
+}
+
+/* LOGIN */
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../img/mainElectro.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.login .form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 300px;
+}
+
+.login h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #333;
+}
+
+.login a {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    color: #3c3cff;
+    text-decoration: none;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login label {
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.login input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #636363;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.login button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #3c3cff;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login button:hover {
+    background-color: #4a4afe;
+}
