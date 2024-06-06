@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="form-container">
-      <h2>Connexion</h2>
+      <h2>Connexion Administrateur</h2>
       <form @submit.prevent="login">
         <label for="email">Email:</label>
         <input type="email" v-model="email" required>
@@ -11,16 +11,16 @@
         
         <button type="submit">Connexion</button>
       </form>
-      <a href="/register">Créer un compte</a>
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import '@/assets/css/Login.css'; // Importer le fichier CSS pour la connexion
 
 export default {
-  name: 'Login',
+  name: 'AdminLogin',
   data() {
     return {
       email: '',
@@ -30,7 +30,7 @@ export default {
   methods: {
     async login() {
       try {
-        const response = await axios.post('https://electroconso.alwaysdata.net/api/connexion.php', {
+        const response = await axios.post('https://electroconso.alwaysdata.net/api/adminLogin.php', {
           email: this.email,
           password: this.password
         }, {
@@ -41,7 +41,7 @@ export default {
         });
         if (response.data.success) {
           alert('Connexion réussie');
-          this.$router.push('/');
+          this.$router.push('/admin');
         } else {
           alert('Erreur: ' + response.data.message);
         }
@@ -55,5 +55,4 @@ export default {
 </script>
 
 <style scoped>
-@import '../assets/css/Login.css';
 </style>

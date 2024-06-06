@@ -22,7 +22,7 @@
 <script>
 import Navbar from '@/components/Navbar.vue';
 import axios from 'axios';
-import '@/assets/css/styles.css'; // Importer le fichier CSS global
+import '@/assets/css/styles.css'; 
 
 export default {
     name: 'Accueil',
@@ -58,5 +58,4 @@ export default {
 </script>
 
 <style scoped>
-/* Styles spécifiques supplémentaires si nécessaire */
 </style>

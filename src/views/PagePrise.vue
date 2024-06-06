@@ -27,7 +27,7 @@
 import axios from 'axios';
 import Navbar from '@/components/Navbar.vue';
 import PriseCard from '@/components/PriseCard.vue';
-import '@/assets/css/styles.css'; // Importer le fichier CSS global
+import '@/assets/css/styles.css'; 
 
 export default {
   name: 'PagePrise',
@@ -51,11 +51,11 @@ export default {
           this.prises = response.data.prises;
         } else {
           console.error('Erreur:', response.data.message);
-          this.$router.push('/login'); // Rediriger vers la page de connexion si non autorisé
+          this.$router.push('/login'); 
         }
       } catch (error) {
         console.error('Erreur lors de la récupération des prises:', error);
-        this.$router.push('/login'); // Rediriger vers la page de connexion en cas d'erreur
+        this.$router.push('/login'); 
       }
     },
     async fetchConsommation() {
@@ -99,5 +99,4 @@ export default {
 </script>
 
 <style scoped>
-/* Styles spécifiques supplémentaires si nécessaire */
 </style>

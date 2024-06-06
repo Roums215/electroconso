@@ -8,7 +8,7 @@
   </template>
   
   <script>
-  import '@/assets/css/styles.css'; // Importer le fichier CSS global
+  import '@/assets/css/styles.css'; 
   
   export default {
     name: 'PriseCard',

@@ -3,6 +3,10 @@ import Home from '../views/Accueil.vue';
 import Login from '../components/Login.vue';
 import Fournisseur from '../views/Fournisseur.vue';
 import PagePrise from '../views/PagePrise.vue';
+import AdminLogin from '@/views/AdminLogin.vue';
+import AccueilAdmin from '@/views/AccueilAdmin.vue';
+import CreationCompte from '@/components/CreationCompte.vue';  
+
 
 
 const routes = [
@@ -24,8 +28,14 @@ const routes = [
   {
     path: '/page-prise',
     name: 'PagePrise',
-    // Ajouter le composant PagePrise ici
     component: PagePrise
+  },
+  { path: '/admin-login', name: 'AdminLogin', component: AdminLogin },
+  { path: '/admin', name: 'AccueilAdmin', component: AccueilAdmin },
+  {
+    path: '/register',  
+    name: 'CreationCompte',
+    component: CreationCompte
   }
 ];
 
