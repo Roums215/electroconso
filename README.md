@@ -17,3 +17,7 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+connexion mail mdp user/admin
+ionita.iulian215@gmail.com
+123
