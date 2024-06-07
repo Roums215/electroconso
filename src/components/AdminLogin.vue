@@ -17,7 +17,6 @@
 
 <script>
 import axios from 'axios';
-import '@/assets/css/Login.css'; // Importer le fichier CSS pour la connexion
 
 export default {
   name: 'AdminLogin',
@@ -39,6 +38,7 @@ export default {
             'Content-Type': 'application/json'
           }
         });
+        console.log(response.data); //  journal
         if (response.data.success) {
           alert('Connexion réussie');
           this.$router.push('/admin');

@@ -12,7 +12,7 @@ if (!isset($_SESSION['admin_id'])) {
 }
 
 $servername = "mysql-electroconso.alwaysdata.net";
-$username = "electroconso";
+$username = "361953";
 $password = "Iulian2004!";
 $dbname = "electroconso_bdd";
 

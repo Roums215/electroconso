@@ -86,8 +86,8 @@ export default {
           alert('Erreur: ' + response.data.message);
         }
       } catch (error) {
-        console.error('Erreur lors de l ajout de la prise:', error);
-        alert('Erreur lors de l ajout de la prise');
+        console.error('Erreur lors de l\'ajout de la prise:', error);
+        alert('Erreur : Ajout de la prise');
       }
     }
   },

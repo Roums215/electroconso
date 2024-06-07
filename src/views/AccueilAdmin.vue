@@ -33,7 +33,7 @@
   import axios from 'axios';
   import Navbar from '@/components/Navbar.vue';
   import FournisseurCard from '@/components/FournisseurCard.vue';
-  import '@/assets/css/styles.css'; // Importer le fichier CSS global
+  import '@/assets/css/styles.css'; 
   
   export default {
     name: 'AccueilAdmin',
@@ -74,8 +74,8 @@
             alert('Erreur: ' + response.data.message);
           }
         } catch (error) {
-          console.error('Erreur lors de la mise à jour du tarif:', error);
-          alert('Erreur lors de la mise à jour du tarif');
+          console.error('Erreur lors de la màj du tarif:', error);
+          alert('Erreur lors de la màj du tarif');
         }
       }
     },

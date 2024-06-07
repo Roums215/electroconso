@@ -1,26 +1,23 @@
 <template>
     <div class="login">
       <div class="form-container">
-        <h2>Créer un compte</h2>
-        <form @submit.prevent="register">
-          <label for="nom">Nom:</label>
-          <input type="text" v-model="nom" required>
+        <h2>Créer un compte administrateur</h2>
+        <form @submit.prevent="registerAdmin">
+          <label for="firstName">Prénom:</label>
+          <input type="text" v-model="firstName" required>
           
-          <label for="prenom">Prénom:</label>
-          <input type="text" v-model="prenom" required>
+          <label for="lastName">Nom:</label>
+          <input type="text" v-model="lastName" required>
           
           <label for="email">Email:</label>
           <input type="email" v-model="email" required>
           
-          <label for="phone">Téléphone:</label>
-          <input type="number" v-model="phone" required>
-  
           <label for="password">Mot de passe:</label>
           <input type="password" v-model="password" required>
           
-          <button type="submit">Créer un compte</button>
+          <button type="submit">Créer un compte administrateur</button>
         </form>
-        <a href="/login">Déjà un compte? Connectez-vous</a>
+        <a href="/admin-login">Déjà un compte admin ? Connectez-vous</a>
       </div>
     </div>
   </template>
@@ -29,24 +26,22 @@
   import axios from 'axios';
   
   export default {
-    name: 'CreationCompte',
+    name: 'AdminCreation',
     data() {
       return {
-        nom: '',
-        prenom: '',
+        firstName: '',
+        lastName: '',
         email: '',
-        phone: '',
         password: ''
       };
     },
     methods: {
-      async register() {
+      async registerAdmin() {
         try {
-          const response = await axios.post('https://electroconso.alwaysdata.net/api/register.php', {
-            nom: this.nom,
-            prenom: this.prenom,
+          const response = await axios.post('https://electroconso.alwaysdata.net/api/creationCompte.php', {
+            firstName: this.firstName,
+            lastName: this.lastName,
             email: this.email,
-            phone: this.phone,
             password: this.password
           }, {
             withCredentials: true,
@@ -55,14 +50,14 @@
             }
           });
           if (response.data.success) {
-            alert('Compte créé avec succès');
-            this.$router.push('/login');
+            alert('Compte administrateur créé avec succès');
+            this.$router.push('/admin-login');
           } else {
             alert('Erreur: ' + response.data.message);
           }
         } catch (error) {
-          console.error('Erreur lors de la création du compte:', error);
-          alert('Erreur lors de la création du compte');
+          console.error('Erreur lors de la création du compte administrateur:', error);
+          alert('Erreur lors de la création du compte administrateur');
         }
       }
     }
@@ -72,4 +67,3 @@
   <style scoped>
   @import '../assets/css/Login.css';
   </style>
-  

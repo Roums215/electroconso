@@ -1,8 +1,15 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "electroconso";
+session_start();
+
+header("Access-Control-Allow-Origin: https://electroconso.alwaysdata.net");
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Content-Type: application/json");
+
+$servername = "mysql-electroconso.alwaysdata.net";
+$username = "361953";
+$password = "Iulian2004!";
+$dbname = "electroconso_bdd";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,12 +22,10 @@ $data = json_decode(file_get_contents('php://input'), true);
 $firstname = htmlspecialchars($data['firstName']);
 $lastname = htmlspecialchars($data['lastName']);
 $email = htmlspecialchars($data['email']);
-$number = htmlspecialchars($data['number']);
-$fournisseur = htmlspecialchars($data['fournisseur']);
 $password = password_hash($data['password'], PASSWORD_BCRYPT);
 
-$stmt = $conn->prepare("INSERT INTO utilisateur (UNom, UPrenom, UMail, UTel, mdp, Id_Fournisseur) VALUES (?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("sssssi", $firstname, $lastname, $email, $number, $password, $fournisseur);
+$stmt = $conn->prepare("INSERT INTO admin (ANom, APrenom, AMail, mdp) VALUES (?, ?, ?, ?)");
+$stmt->bind_param("ssss", $firstname, $lastname, $email, $password);
 
 $response = [];
 
