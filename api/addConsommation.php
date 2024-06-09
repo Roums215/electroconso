@@ -1,4 +1,3 @@
-
 <?php
 header("Access-Control-Allow-Origin: https://electroconso.alwaysdata.net");
 header("Access-Control-Allow-Credentials: true");

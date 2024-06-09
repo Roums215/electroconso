@@ -22,28 +22,30 @@ if ($conn->connect_error) {
 }
 
 $user_id = $_SESSION['id'];
+$current_month = date('Y-m-01'); // Premier jour du mois en cours
 
 $query = "
-SELECT c.Id_Consommation, c.W, c.dateW, p.Id_Prise, p.NomP, f.TarifElect * c.W / 1000 AS Cout, f.TarifElect
+SELECT SUM(c.W) as totalWatts, SUM(f.TarifElect * c.W / 1000) as totalCost
 FROM consommation c
 JOIN prise p ON c.Id_Prise = p.Id_Prise
 JOIN utilisateur u ON p.Id_Utilisateur = u.Id_Utilisateur
 JOIN fournisseur f ON u.Id_Fournisseur = f.Id_Fournisseur
-WHERE u.Id_Utilisateur = ?
-ORDER BY c.dateW DESC";
+WHERE u.Id_Utilisateur = ? AND c.dateW >= ?";
 
 $stmt = $conn->prepare($query);
-$stmt->bind_param("i", $user_id);
+$stmt->bind_param("is", $user_id, $current_month);
 $stmt->execute();
 $result = $stmt->get_result();
 
-$consommations = [];
-while ($row = $result->fetch_assoc()) {
-    $consommations[] = $row;
+$response = ["success" => false];
+if ($row = $result->fetch_assoc()) {
+    $response["success"] = true;
+    $response["totalWatts"] = $row["totalWatts"];
+    $response["totalCost"] = $row["totalCost"];
 }
 
 $stmt->close();
 $conn->close();
 
-echo json_encode(["success" => true, "consommations" => $consommations]);
+echo json_encode($response);
 ?>
